@@ -1,11 +1,11 @@
 # PPA1 - CIS4930 - Fall 2019
 # Alexander Prascak
 
-def making_bmi(weight, height):
+def bmi(weight, height):
     return round( ((weight*.45) / (height * .025) ** 2), 1)
 
-def retirement(test):
-     return 'Retirement Function Call'
+def retirement(age, income, saving_rate, savings):
+     return 2
 
 def shortest_distance(test):
     return 'Shortest Distance Function Call'
@@ -37,7 +37,7 @@ if (__name__ == "__main__"):
         elif option == "1":
             weight = input("Weight (in pounds): ")
             height = input("Height (in inches): ")
-            bmi = "BMI: " + str(making_bmi(int(weight), int(height)))
+            bmi = "BMI: " + str(bmi(int(weight), int(height)))
             print(bmi)
         elif option == "2":
             print(retirement(3))

@@ -2,12 +2,10 @@
 # Alexander Prascak
 
 import unittest
-from ppa1 import making_bmi
+from ppa1 import bmi
 
 class TestBMI(unittest.TestCase):
 
     def test_bmi(self):
         # Makes sure example calculations are correct.
-        self.assertEqual(making_bmi(125, 63), 22.7)
-
-    
+        self.assertEqual(bmi(125, 63), 22.7)
