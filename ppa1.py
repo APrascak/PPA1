@@ -1,6 +1,11 @@
 # PPA1 - CIS4930 - Fall 2019
 # Alexander Prascak
 
+
+import math
+
+
+# PPA1 Functions
 def bmi(weight, height):
     return round( ((weight*.45) / (height * .025) ** 2), 1)
 
@@ -13,8 +18,8 @@ def retirement(age, income, saving_rate, savings):
     else:
         return 100
 
-def shortest_distance(x1, x2, y1, y2):
-    return 4
+def shortest_distance(x1, y1, x2, y2):
+    return math.sqrt( ((x2 - x1) ** 2) + ((y2 - y1) ** 2) )
 
 def email_verifier(test):
     return 'Email Verifier Function Call'
@@ -23,12 +28,13 @@ def split_the_tip(test):
     return 'Split the Tip Function Call'
 
 
+# PPA1 Command Line UI
 if (__name__ == "__main__"):
     option = 5
     while option != 0:
 
         print()
-        print("PRASCAK PPA PROGRAM MENU")
+        print("PRASCAK1 PPA PROGRAM MENU")
         print("Enter # for function selection.")
         print("0. Exit Program")
         print("1. Calculate BMI")
@@ -54,7 +60,7 @@ if (__name__ == "__main__"):
                 saving_rate = input("Please enter a valid saving rate as a % of your income: ")
             print("Your retirement age is: " + str(retirement(float(age), float(income), float(saving_rate), float(savings))) + " years old.")
         elif option == "3":
-            print(shortest_distance(3))
+            print(3)
         elif option == "4":
             print(email_verifier(3))
         elif option == "5":

@@ -11,3 +11,6 @@ class TestShortestDistance(unittest.TestCase):
 
     def test_same_line(self):
         self.assertEqual(shortest_distance(10,4,10,7), 3)
+
+    def test_diagonal_line(self):
+        self.assertEqual(shortest_distance(3,3,6,7), 5)
