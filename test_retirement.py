@@ -4,7 +4,7 @@
 import unittest
 from ppa1 import retirement
 
-class TestBMI(unittest.TestCase):
+class TestRetirement(unittest.TestCase):
 
     def test_retirement_no_death(self):
         self.assertEqual(retirement(30,100000,10,100000), 37.4)

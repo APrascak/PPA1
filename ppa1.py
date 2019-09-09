@@ -5,10 +5,16 @@ def bmi(weight, height):
     return round( ((weight*.45) / (height * .025) ** 2), 1)
 
 def retirement(age, income, saving_rate, savings):
-     return 2
+    yearly_saving = (income * (float(saving_rate) / 100)) * 1.35
+    time_to_savings = savings / yearly_saving
+    answer = round((time_to_savings + age), 1)
+    if answer < 100:
+        return answer
+    else:
+        return 100
 
-def shortest_distance(test):
-    return 'Shortest Distance Function Call'
+def shortest_distance(x1, x2, y1, y2):
+    return 4
 
 def email_verifier(test):
     return 'Email Verifier Function Call'
@@ -40,7 +46,13 @@ if (__name__ == "__main__"):
             bmi = "BMI: " + str(bmi(int(weight), int(height)))
             print(bmi)
         elif option == "2":
-            print(retirement(3))
+            age = input("Age: ")
+            income = input("Yearly Income: ")
+            saving_rate = input("What % of your income do you save: ")
+            savings = input("How much savings would you like to have at retirement: ")
+            while float(saving_rate) < 0 or float(saving_rate) > 100:
+                saving_rate = input("Please enter a valid saving rate as a % of your income: ")
+            print("Your retirement age is: " + str(retirement(float(age), float(income), float(saving_rate), float(savings))) + " years old.")
         elif option == "3":
             print(shortest_distance(3))
         elif option == "4":
