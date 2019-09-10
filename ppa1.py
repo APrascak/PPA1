@@ -46,8 +46,19 @@ def email_verifier(email):
 
     return True
 
-def split_the_tip(test):
-    return 'Split the Tip Function'
+def split_the_tip(amount, guests):
+    answer = []
+    total = round( (float(amount) * 1.15), 2)
+    print(total)
+    answer.append(total)
+    split = round((total / guests), 2)
+    for i in range(guests):
+        answer.append(split)
+    if split * guests < total:
+        answer[guests] += .01
+    return answer
+
+
 
 
 
@@ -95,4 +106,4 @@ if (__name__ == "__main__"):
             else:
                 print("Your email address is not valid!")
         elif option == "5":
-            print(split_the_tip(3))
+            print( split_the_tip(20.1,5) )
