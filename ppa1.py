@@ -47,7 +47,7 @@ def email_verifier(email):
     return True
 
 def split_the_tip(test):
-    return 'Split the Tip Function Call'
+    return 'Split the Tip Function'
 
 
 
@@ -89,6 +89,10 @@ if (__name__ == "__main__"):
             y2 = input("Y-coordinate of the second point: ") 
             print("The shortest distance is: " + str(shortest_distance(x1, y1, x2, y2)))
         elif option == "4":
-            print(email_verifier(3))
+            email = input("Email address: ")
+            if email_verifier(email):
+                print("Your email address is valid!")
+            else:
+                print("Your email address is not valid!")
         elif option == "5":
             print(split_the_tip(3))
