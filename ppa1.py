@@ -5,6 +5,7 @@
 import math
 
 
+
 # PPA1 Functions
 def bmi(weight, height):
     return round( ((weight*.45) / (height * .025) ** 2), 1)
@@ -22,13 +23,32 @@ def shortest_distance(x1, y1, x2, y2):
     return math.sqrt( ((x2 - x1) ** 2) + ((y2 - y1) ** 2) )
 
 def email_verifier(email):
-    if (email[0] == '.' or email[len(email)-1] == '.'):
+    if (email[0] == '.'):
         return False
-    else:
-        return True
+    
+    for i in range(len(email)):
+        if email[i] == '@':
+            some_string_1 = email[0:i-1]
+            if email[i-1] == '.':
+                return False
+
+    for i in range(len(email)):
+        if email[i] == '.':
+            if email[i+1] == '.':
+                return False
+
+    if email[0].isnumeric():
+        return False
+
+    chars = set('"(),:;<>@[\]`')
+    if any((c in chars) for c in some_string_1):
+        return False
+
+    return True
 
 def split_the_tip(test):
     return 'Split the Tip Function Call'
+
 
 
 # PPA1 Command Line UI
