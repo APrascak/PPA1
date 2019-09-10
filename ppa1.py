@@ -106,4 +106,11 @@ if (__name__ == "__main__"):
             else:
                 print("Your email address is not valid!")
         elif option == "5":
-            print( split_the_tip(20.1,5) )
+            bill = input("Bill amount (without tip): ")
+            guests = input("Number of guests: ")
+            split = split_the_tip(float(bill), int(guests))
+            print("Your total bill is: " + str(split[0]))
+            if split[int(guests)] > split[int(guests)-1]:
+                print("All guests except for one will pay $" + str(split[1]) + ", the last guest will pay $" + str(split[int(guests)]))
+            else:
+                print("All guests will pay $" + str(split[1]))            

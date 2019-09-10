@@ -2,6 +2,8 @@
 Alexander Prascak
 
 ### Naming and organizational conventions
+Language: Python 3
+Framework: unittest
 
 ### Setup and execution instructions
 Language: Python 3.
