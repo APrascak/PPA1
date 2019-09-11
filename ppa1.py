@@ -20,7 +20,7 @@ def retirement(age, income, saving_rate, savings):
         return 100
 
 def shortest_distance(x1, y1, x2, y2):
-    return math.sqrt( ((x2 - x1) ** 2) + ((y2 - y1) ** 2) )
+    return math.sqrt( ((float(x2) - float(x1)) ** 2) + ((float(y2) - float(y1)) ** 2) )
 
 def email_verifier(email):
     if (email[0] == '.'):
@@ -67,6 +67,7 @@ if (__name__ == "__main__"):
     option = 5
     while option != 0:
 
+        # Function selection menu
         print()
         print("PRASCAK PPA1 PROGRAM MENU")
         print("Enter # for function selection.")
@@ -78,6 +79,7 @@ if (__name__ == "__main__"):
         print("5. Split the Tip")
         option = input("Function #: ")
         
+        # 
         if option == "0":
             quit()
         elif option == "1":
