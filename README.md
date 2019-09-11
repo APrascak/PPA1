@@ -39,8 +39,20 @@ Function #:
 ```
 
 ### Screenshots of tests passing
+![BMI Testing](https://github.com/APrascak/PPA1/blob/master/screenshots/test_bmi_ss.png?raw=true)
+  
+![Retirement Testing](https://github.com/APrascak/PPA1/blob/master/screenshots/test_retirement_ss.png?raw=true)
+  
+![Shortest Distance Testing](https://github.com/APrascak/PPA1/blob/master/screenshots/test_shortest_distance_ss.png?raw=true)
+  
+![Email Verifier Testing](https://github.com/APrascak/PPA1/blob/master/screenshots/test_email_verifier_ss.png?raw=true)
+  
+![Split Testing](https://github.com/APrascak/PPA1/blob/master/screenshots/test_calculator_tip_ss.png?raw=true)
 
 ### Test coverage report
+I utilized the "coverage.py" coverage report tool.
+![Coverage report](https://github.com/APrascak/PPA1/blob/master/screenshots/Screen%20Shot%202019-09-10%20at%2010.24.06%20PM.png?raw=true)
+
 
 ### Conclusion
 Having never worked with TDD before, I was really happy with how it worked out. I feel like it definitely made the development process a lot smoother and easier to think through. I wasn't worried about testing my code after finalizing an algorithm, I could test my code along the path of developing my code. This made a less stressful environment where I could focus more on actual development.  
@@ -48,3 +60,6 @@ Having never worked with TDD before, I was really happy with how it worked out. 
 Unit testing & TDD are definitely very useful to practical software development. Having already defined what my code would need to do beforehand was very useful in figuring out exactly what I needed my code to accomplish. Although Unit Testing in itself consumes time that could be spent on development, it made the development time significantly shorter.  
   
 TDD is very beneficial for development in my experience. It makes the overall development process much more organized, while still maintaining a lot of flexibility. One of the strongest benefits of it in my opinion is that it prevents testing bias. I couldn't write unit tests to fit my code, as they were already written before I even started development. One of the downfalls is that with much more loosely defined requirements, it can become very difficult to figure out how to make unit tests for your code. Without a solid understanding of your system requirements, TDD seems to fall apart.
+  
+The video for functionality is `ppa1_functions_prascak.mov`
+The video for TDD evidence is `ppa1_rgr_evidence.mov`
