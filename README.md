@@ -51,7 +51,10 @@ Function #:
 
 ### Test coverage report
 I utilized the "coverage.py" coverage report tool.
+  
 ![Coverage report](https://github.com/APrascak/PPA1/blob/master/screenshots/Screen%20Shot%202019-09-10%20at%2010.24.06%20PM.png?raw=true)
+  
+The coverage report would not test lines that were inside of functions or based on inputs form the command line, so the coverage report would not go higher than 28% regardless of how I adjusted the testing files or function definitions. I need to find a more accurate way of determining test coverage.
 
 
 ### Conclusion
