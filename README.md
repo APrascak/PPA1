@@ -64,5 +64,5 @@ Unit testing & TDD are definitely very useful to practical software development.
   
 TDD is very beneficial for development in my experience. It makes the overall development process much more organized, while still maintaining a lot of flexibility. One of the strongest benefits of it in my opinion is that it prevents testing bias. I couldn't write unit tests to fit my code, as they were already written before I even started development. One of the downfalls is that with much more loosely defined requirements, it can become very difficult to figure out how to make unit tests for your code. Without a solid understanding of your system requirements, TDD seems to fall apart.
   
-The video for functionality is `ppa1_functions_prascak.mov`
+The video for functionality is `ppa1_functions_prascak.mov`  
 The video for TDD evidence is `ppa1_rgr_evidence.mov`
