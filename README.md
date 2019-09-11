@@ -11,7 +11,7 @@ All of the functions are defined in ppa1.py.
 The command line interface also runs through the ppa1.py file.  
   
 Each of the functions have their own respective files for their unit tests. The naming convention for these files is test_*function_name*.py.  
-Within each file is the class for the unit tests and then the assertions for each test.
+Within each file is the class for the unit tests and then the assertions for each test. The tests are named test_condition. Where the condition is the specific case of the function that is being tested.
 
 ### Setup and execution instructions
 Language: Python 3.7.4 [Download Here](https://www.python.org/downloads/)  

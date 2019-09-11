@@ -8,7 +8,10 @@ import math
 
 # PPA1 Functions
 def bmi(weight, height):
-    return round( ((weight*.45) / (height * .025) ** 2), 1)
+    if height < 0:
+        return 0
+    else:
+        return round( ((weight*.45) / (height * .025) ** 2), 1)
 
 def retirement(age, income, saving_rate, savings):
     yearly_saving = (income * (float(saving_rate) / 100)) * 1.35
@@ -26,15 +29,15 @@ def email_verifier(email):
     if (email[0] == '.'):
         return False
     
-    for i in range(len(email)):
-        if email[i] == '@':
-            some_string_1 = email[0:i-1]
-            if email[i-1] == '.':
-                return False
 
+    # Goal is to refactor this part of the email verification method as part of Refactoring.
     for i in range(len(email)):
         if email[i] == '.':
             if email[i+1] == '.':
+                return False
+        if email[i] == '@':
+            some_string_1 = email[0:i-1]
+            if email[i-1] == '.':
                 return False
 
     if email[0].isnumeric():
@@ -49,7 +52,6 @@ def email_verifier(email):
 def split_the_tip(amount, guests):
     answer = []
     total = round( (float(amount) * 1.15), 2)
-    print(total)
     answer.append(total)
     split = round((total / guests), 2)
     for i in range(guests):
