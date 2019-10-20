@@ -14,6 +14,16 @@ pipeline {
                 sh 'python -m py_compile ppa1.py'
             }
         }
+        stage('Test') {
+            agent {
+                docker {
+                    image 'qnib/pytest'
+                }
+            }
+            steps {
+                sh 'py.test -- verbose --junit-xml test-reports/results.xml test_bmi.py'
+            }
+        }
         
     }
 }
