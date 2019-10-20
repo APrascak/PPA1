@@ -23,6 +23,11 @@ pipeline {
             steps {
                 sh 'py.test -- verbose --junit-xml test-reports/results.xml test_bmi.py'
             }
+            post {
+                always {
+                    junit 'test-reports/results.xml'
+                }
+            }
         }
         
     }
