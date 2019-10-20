@@ -24,6 +24,20 @@ pipeline {
                 sh 'py.test --verbose test_bmi.py test_email_verifier.py test_retirement.py test_shortest_distance.py test_split_the_tip.py'
             }
         }
-        
+        stage('Deliver') {
+            agent {
+                docker {
+                    image 'cdrx/pyinstaller-linux:python3.7.4'
+                }
+            }
+            steps {
+                sh 'pyinstaller --onefile ppa1.py'
+            }
+            post {
+                success {
+                    archiveArtifacts 'dist/ppa1'
+                }
+            }
+        }
     }
 }
