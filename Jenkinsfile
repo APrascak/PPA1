@@ -31,6 +31,7 @@ pipeline {
                 }
             }
             steps {
+                sh 'pip install pyinstaller'
                 sh 'pyinstaller --onefile ppa1.py'
             }
             post {
