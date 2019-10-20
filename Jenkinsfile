@@ -23,11 +23,6 @@ pipeline {
             steps {
                 sh 'py.test --verbose test_bmi.py'
             }
-            post {
-                always {
-                    junit 'test-reports/results.xml'
-                }
-            }
         }
         
     }
