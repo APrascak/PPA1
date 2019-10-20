@@ -27,7 +27,7 @@ pipeline {
         stage('Deliver') {
             agent {
                 docker {
-                    image 'cdrx/pyinstaller-linux:python3.7.4'
+                    image 'cdrx/pyinstaller-linux:python3'
                 }
             }
             steps {
