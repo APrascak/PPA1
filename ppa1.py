@@ -2,6 +2,8 @@
 # Alexander Prascak
 
 
+from __future__ import division
+from __future__ import absolute_import
 import math
 
 
@@ -26,25 +28,25 @@ def shortest_distance(x1, y1, x2, y2):
     return math.sqrt( ((float(x2) - float(x1)) ** 2) + ((float(y2) - float(y1)) ** 2) )
 
 def email_verifier(email):
-    email = unicode(email,'utf-8')
-    if (email[0] == '.'):
+    email = unicode(email,u'utf-8')
+    if (email[0] == u'.'):
         return False
     
 
     # Goal is to refactor this part of the email verification method as part of Refactoring.
-    for i in range(len(email)):
-        if email[i] == '.':
-            if email[i+1] == '.':
+    for i in xrange(len(email)):
+        if email[i] == u'.':
+            if email[i+1] == u'.':
                 return False
-        if email[i] == '@':
+        if email[i] == u'@':
             some_string_1 = email[0:i-1]
-            if email[i-1] == '.':
+            if email[i-1] == u'.':
                 return False
 
     if email[0].isdecimal():
         return False
 
-    chars = set('"(),:;<>@[\]`')
+    chars = set(u'"(),:;<>@[\]`')
     if any((c in chars) for c in some_string_1):
         return False
 
@@ -55,7 +57,7 @@ def split_the_tip(amount, guests):
     total = round( (float(amount) * 1.15), 2)
     answer.append(total)
     split = round((total / guests), 2)
-    for i in range(guests):
+    for i in xrange(guests):
         answer.append(split)
     if split * guests < total:
         answer[guests] += .01
@@ -66,56 +68,56 @@ def split_the_tip(amount, guests):
 
 
 # PPA1 Command Line UI
-if (__name__ == "__main__"):
+if (__name__ == u"__main__"):
     option = 5
     while option != 0:
 
         # Function selection menu
-        print()
-        print("PRASCAK PPA1 PROGRAM MENU")
-        print("Enter # for function selection.")
-        print("0. Exit Program")
-        print("1. Calculate BMI")
-        print("2. Calculate Retirement Age")
-        print("3. Calculate Shortest Distance")
-        print("4. Email Verifier")
-        print("5. Split the Tip")
-        option = input("Function #: ")
+        print
+        print u"PRASCAK PPA1 PROGRAM MENU"
+        print u"Enter # for function selection."
+        print u"0. Exit Program"
+        print u"1. Calculate BMI"
+        print u"2. Calculate Retirement Age"
+        print u"3. Calculate Shortest Distance"
+        print u"4. Email Verifier"
+        print u"5. Split the Tip"
+        option = raw_input(u"Function #: ")
         
         # 
-        if option == "0":
+        if option == u"0":
             quit()
-        elif option == "1":
-            weight = input("Weight (in pounds): ")
-            height = input("Height (in inches): ")
-            bmi = "BMI: " + str(bmi(int(weight), int(height)))
-            print(bmi)
-        elif option == "2":
-            age = input("Age: ")
-            income = input("Yearly Income: ")
-            saving_rate = input("What % of your income do you save: ")
-            savings = input("How much savings would you like to have at retirement: ")
+        elif option == u"1":
+            weight = raw_input(u"Weight (in pounds): ")
+            height = raw_input(u"Height (in inches): ")
+            bmi = u"BMI: " + unicode(bmi(int(weight), int(height)))
+            print bmi
+        elif option == u"2":
+            age = raw_input(u"Age: ")
+            income = raw_input(u"Yearly Income: ")
+            saving_rate = raw_input(u"What % of your income do you save: ")
+            savings = raw_input(u"How much savings would you like to have at retirement: ")
             while float(saving_rate) < 0 or float(saving_rate) > 100:
-                saving_rate = input("Please enter a valid saving rate as a % of your income: ")
-            print("Your retirement age is: " + str(retirement(float(age), float(income), float(saving_rate), float(savings))) + " years old.")
-        elif option == "3":
-            x1 = input("X-coordinate of the first point: ")
-            y1 = input("Y-coordinate of the first point: ")
-            x2 = input("X-coordinate of the second point: ")
-            y2 = input("Y-coordinate of the second point: ") 
-            print("The shortest distance is: " + str(shortest_distance(x1, y1, x2, y2)))
-        elif option == "4":
-            email = input("Email address: ")
+                saving_rate = raw_input(u"Please enter a valid saving rate as a % of your income: ")
+            print u"Your retirement age is: " + unicode(retirement(float(age), float(income), float(saving_rate), float(savings))) + u" years old."
+        elif option == u"3":
+            x1 = raw_input(u"X-coordinate of the first point: ")
+            y1 = raw_input(u"Y-coordinate of the first point: ")
+            x2 = raw_input(u"X-coordinate of the second point: ")
+            y2 = raw_input(u"Y-coordinate of the second point: ") 
+            print u"The shortest distance is: " + unicode(shortest_distance(x1, y1, x2, y2))
+        elif option == u"4":
+            email = raw_input(u"Email address: ")
             if email_verifier(email):
-                print("Your email address is valid!")
+                print u"Your email address is valid!"
             else:
-                print("Your email address is not valid!")
-        elif option == "5":
-            bill = input("Bill amount (without tip): ")
-            guests = input("Number of guests: ")
+                print u"Your email address is not valid!"
+        elif option == u"5":
+            bill = raw_input(u"Bill amount (without tip): ")
+            guests = raw_input(u"Number of guests: ")
             split = split_the_tip(float(bill), int(guests))
-            print("Your total bill is: " + str(split[0]))
+            print u"Your total bill is: " + unicode(split[0])
             if split[int(guests)] > split[int(guests)-1]:
-                print("All guests except for one will pay $" + str(split[1]) + ", the last guest will pay $" + str(split[int(guests)]))
+                print u"All guests except for one will pay $" + unicode(split[1]) + u", the last guest will pay $" + unicode(split[int(guests)])
             else:
-                print("All guests will pay $" + str(split[1]))            
+                print u"All guests will pay $" + unicode(split[1])            
