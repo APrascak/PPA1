@@ -26,6 +26,7 @@ def shortest_distance(x1, y1, x2, y2):
     return math.sqrt( ((float(x2) - float(x1)) ** 2) + ((float(y2) - float(y1)) ** 2) )
 
 def email_verifier(email):
+    email.encode('utf-8')
     if (email[0] == '.'):
         return False
     
