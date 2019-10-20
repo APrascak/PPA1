@@ -10,5 +10,6 @@ class TestBMI(unittest.TestCase):
         # Makes sure example calculations are correct.
         self.assertEqual(bmi(125, 63), 22.7)
 
+    # Test for a negative height is failing (RED)
     def test_negative_bmi(self):
         self.assertEqual(bmi(125,-5), 0)
