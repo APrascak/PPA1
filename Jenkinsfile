@@ -21,7 +21,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'py.test --verbose test_bmi.py'
+                sh 'py.test --verbose test_bmi.py test_email_verifier.py test_retirement.py test_shortest_distance.py test_split_the_tipe.py'
             }
         }
         
