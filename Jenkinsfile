@@ -11,6 +11,7 @@ pipeline {
                 }
             }
             steps {
+                export PYTHONPATH=$PATH_TO_MODULE:$PYTHONPATH
                 sh 'pip install --no-cache-dir pymongo'
                 sh 'python -m py_compile ppa1.py'
             }
