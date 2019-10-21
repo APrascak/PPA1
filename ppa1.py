@@ -8,6 +8,24 @@ import math
 import pymongo
 
 client = pymongo.MongoClient("mongodb://localhost:27017")
+db = client["ppa2"]
+collection = db["logs"]
+dblist = client.list_database_names()
+
+#est_unit = {"name": "Peter", "address": "Chicago"}
+#x = collection.insert_one(test_unit)
+#print(x.inserted_id)
+#print db.list_collection_names()
+#if "testdb" in dblist:
+#    print "The database exists"
+#else:
+#    print "FAILURE"
+
+for x in collection.find():
+    print u(x)
+
+# test_unit = {"function": "bmi","timestamp": "2019-10-12 12:28:00am", "input": "160, 72", "output": "27.4"}
+# collection.insert_one(test_unit)
 
 
 # PPA1 Functions
