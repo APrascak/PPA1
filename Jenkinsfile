@@ -11,7 +11,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'pip install pymongo'
+                sh 'pip -m install pymongo'
                 sh 'python -m py_compile ppa1.py'
             }
         }
