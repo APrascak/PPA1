@@ -7,7 +7,7 @@ from __future__ import absolute_import
 import math
 import pymongo
 
-client = pymongo.MongoClient("mongodb://localhost:27017")
+client = pymongo.MongoClient(host="0.0.0.0", port=27017)
 db = client["ppa2"]
 collection = db["logs"]
 dblist = client.list_database_names()
@@ -22,7 +22,7 @@ dblist = client.list_database_names()
 #    print "FAILURE"
 
 for x in collection.find():
-    print u(x)
+    print x
 
 # test_unit = {"function": "bmi","timestamp": "2019-10-12 12:28:00am", "input": "160, 72", "output": "27.4"}
 # collection.insert_one(test_unit)
