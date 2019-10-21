@@ -23,6 +23,7 @@ pipeline {
                 }
             }
             steps {
+                sh 'pip install pymongo'
                 sh 'py.test --verbose test_bmi.py test_email_verifier.py test_retirement.py test_shortest_distance.py test_split_the_tip.py'
             }
         }
