@@ -5,7 +5,9 @@
 from __future__ import division
 from __future__ import absolute_import
 import math
+import pymongo
 
+client = pymongo.MongoClient("mongodb://localhost:27017")
 
 
 # PPA1 Functions
