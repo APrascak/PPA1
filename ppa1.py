@@ -7,7 +7,7 @@ from __future__ import absolute_import
 import math
 import pymongo
 
-client = pymongo.MongoClient(host="0.0.0.0", port=27017)
+client = pymongo.MongoClient("host.docker.internal:27017")
 db = client["ppa2"]
 collection = db["logs"]
 dblist = client.list_database_names()
