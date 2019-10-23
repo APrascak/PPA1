@@ -27,6 +27,9 @@ def bmi(weight, height):
         collection.insert_one(bmi_insert)
         return 0
     else:
+        output = round( ((weight*.45) / (height * .025) ** 2), 1)
+        bmi_insert = {u"function": u"bmi",u"timestamp": unicode(current_time), u"input": input, u"output": unicode(output)}
+        collection.insert_one(bmi_insert)
         return round( ((weight*.45) / (height * .025) ** 2), 1)
 
 def retirement(age, income, saving_rate, savings):
