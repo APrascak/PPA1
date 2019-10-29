@@ -2,6 +2,8 @@
 ***
 
 ### Continued Development for PPA2 in this repository.
+After multiple hours of trying to configure the python 3 docker image to work for Deliver stage, decided I had to convert the Python 3 code to Python 2 in order to fully implement the CI pipeline.  
+To run the application: `python ppa1.py`  
 This is the command to initialize the MongoDB Docker container: `docker run -d -p 27017-27019:27017-27019 --name mongodb mongo:4.0.4`
 MongoDB Port: 27017  
 Was not able to setup API integration for this assignment. No endpoints or http request information.
