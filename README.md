@@ -1,3 +1,14 @@
+# PPA2 - CIS4930 SW Testing for Continuous Development
+***
+
+### Continued Development for PPA2 in this repository.
+This is the command to initialize the MongoDB Docker container: `docker run -d -p 27017-27019:27017-27019 --name mongodb mongo:4.0.4`
+MongoDB Port: 27017  
+Was not able to setup API integration for this assignment. No endpoints or http request information.
+
+
+
+
 # PPA1 - CIS4930 SW Testing for Continuous Development
 ***
 Name: Alexander Prascak  
